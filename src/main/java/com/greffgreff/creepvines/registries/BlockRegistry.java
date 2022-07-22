@@ -1,13 +1,11 @@
-package com.greffgreff.creepvines.init;
+package com.greffgreff.creepvines.registries;
 
 import com.greffgreff.creepvines.Main;
 import com.greffgreff.creepvines.blocks.Creepvine;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ModBlocks {
+public class BlockRegistry {
     public static final RegistryObject<Block> CREEPVINE = registerBlock("creepvine", new Creepvine());
 
     public static RegistryObject<Block> registerBlock(String name, Block block) {
