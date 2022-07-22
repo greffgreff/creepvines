@@ -1,5 +1,7 @@
 package com.greffgreff.creepvines;
 
+import com.greffgreff.creepvines.registries.BlockRegistry;
+import com.greffgreff.creepvines.registries.ItemRegistry;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.BlockItem;
@@ -29,14 +31,12 @@ import org.slf4j.Logger;
 public class Main {
     public static final String MOD_ID = "creepvines";
     private static final Logger LOGGER = LogUtils.getLogger();
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MOD_ID);
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
 
     public Main() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        BLOCKS.register(modEventBus);
-        ITEMS.register(modEventBus);
+        BlockRegistry.BLOCKS.register(modEventBus);
+        ItemRegistry.ITEMS.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
